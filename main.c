@@ -2,29 +2,30 @@
 
 void runge_kutta4(long double *x, long double *y, long double *z, long double t, long double rS, long double a) {
     long double vx, vy, vz;
-
+	long double proton_mass = 1.6726219e-27;
+	long double electron_mass = 9.10938356e-31;
+	long double proton_energy = 938.2720813e6;
     long double k1x, k1y, k1z;
     long double k2x, k2y, k2z;
     long double k3x, k3y, k3z;
     long double k4x, k4y, k4z;
-
     long double f1x, f1y, f1z;
-    calculate_new_position(&(*x), &(*y), &(*z), t, rS, a);
+    calculate_new_position(&(*x), &(*y), &(*z), t, rS, a, proton_mass, proton_energy);
     k1x = dt * f1x;
     k1y = dt * f1y;
     k1z = dt * f1z;
 
-    calculate_new_position(&(*x), &(*y), &(*z), t, rS, a);
+    calculate_new_position(&(*x), &(*y), &(*z), t, rS, a, proton_mass, proton_energy);
     k2x = dt * f1x;
     k2y = dt * f1y;
     k2z = dt * f1z;
 
-    calculate_new_position(&(*x), &(*y), &(*z), t, rS, a);
+    calculate_new_position(&(*x), &(*y), &(*z), t, rS, a, proton_mass, proton_energy);
     k3x = dt * f1x;
     k3y = dt * f1y;
     k3z = dt * f1z;
 
-    calculate_new_position(&(*x), &(*y), &(*z), t, rS, a);
+    calculate_new_position(&(*x), &(*y), &(*z), t, rS, a, proton_mass, proton_energy);
     k4x = dt * f1x;
     k4y = dt * f1y;
     k4z = dt * f1z;
