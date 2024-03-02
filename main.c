@@ -1,6 +1,6 @@
 #include "include.h"
 
-void runge_kutta4(long double *x, long double *y, long double *z, long double t, long double rS, long double a) {
+/* void runge_kutta4(long double *x, long double *y, long double *z, long double t, long double rS, long double a) {
     long double vx, vy, vz;
 	long double proton_mass = 1.6726219e-27;
 	long double electron_mass = 9.10938356e-31;
@@ -34,6 +34,9 @@ void runge_kutta4(long double *x, long double *y, long double *z, long double t,
     *y += (k1y + 2.0 * k2y + 2.0 * k3y + k4y) / 6.0;
     *z += (k1z + 2.0 * k2z + 2.0 * k3z + k4z) / 6.0;
 }
+ */
+
+
 
 
 void init() 
@@ -55,12 +58,12 @@ int main(int argc, char** argv) {
     printf("Rs = %e\n", 2.0 * G * Ms / (C * C));
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB); 
     glEnable(GL_DEPTH_TEST);
-    glutInitWindowSize(920, 920);
-    glutInitWindowPosition(2000, 2000);
+    glutInitWindowSize(820, 820);
+    glutInitWindowPosition(100, 100);
     glutCreateWindow("Black Hole Simulation");
-    glEnable(GL_BLEND);
-
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    //glEnable(GL_BLEND);
+    //glEnable(GL_POINT_SMOOTH);
+    //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glutTimerFunc(1000 / 10, display, 0);
     glutDisplayFunc(display);
     glutIdleFunc(display);
