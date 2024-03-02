@@ -51,6 +51,7 @@ void cleanup()
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     init();
+
     printf("Rs = %e\n", 2.0 * G * Ms / (C * C));
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB); 
     glEnable(GL_DEPTH_TEST);
@@ -58,7 +59,7 @@ int main(int argc, char** argv) {
     glutInitWindowPosition(2000, 2000);
     glutCreateWindow("Black Hole Simulation");
     glEnable(GL_BLEND);
-    glEnable(GL_POINT_SMOOTH);
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glutTimerFunc(1000 / 10, display, 0);
     glutDisplayFunc(display);

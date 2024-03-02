@@ -2,7 +2,7 @@ NAME = accretion_disk_simulator
 
 CC = gcc
 
-CFLAGS = -std=c99 -O3 -g -g3 -lm -O3 -lgmp -lGLU -lGL -lglut -fopenmp -ffast-math
+CFLAGS = -std=c99 -O3 -g -g3 -lm -O3 -lgmp -lGLU -lGL -lglut -fopenmp-simd -ffast-math -march=native -fpack-struct -fno-strict-aliasing -fno-omit-frame-pointer -fno-stack-protector -fno-exceptions 
 
 SRC = $(wildcard *.c)
 

@@ -12,10 +12,9 @@
 #define C 299792458.0  
 #define G 6.67430e-11  
 #define PI 3.14159265358979323846
-#define Ms 10.89e16
-#define dt 0.0000000000000032     
-#define NUM_PARTICLES 80000
-
+#define Ms 11.99e16
+#define dt 0.00000000000365
+#define NUM_PARTICLES 110000
 
 //long double particles[NUM_PARTICLES][6];
 void init();
